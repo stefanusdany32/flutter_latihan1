@@ -59,15 +59,17 @@ class _MyAppState extends State<MyApp> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text(penampung.toString()),
-                  Text(hasil),
+                  Text("Pengali " + penampung.toString()),
+                  Text("Hasil " + hasil),
                   Text(state),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    
                     children: <Widget>[
                       RaisedButton(child: Text("Kalikan dengan 2"), onPressed: kali),
                       RaisedButton(child: Text("Tambahkan"), onPressed: tambah),
-                      RaisedButton(child: Text("Ubah Ke Huruf"), onPressed: change),
+                      RaisedButton(child: Text("Ubah Ke " + state), onPressed: change),
                       RaisedButton(child: Text("Reset"), onPressed: reset),
                     ],
                   )
@@ -87,7 +89,7 @@ class _MyAppState extends State<MyApp> {
         if (state == "angka"){
           hasil = hasil + " " + penampung.toString();
         }else if (state == "huruf"){
-          hasil = hasil + " " + String.fromCharCode(penampung+65) ;
+          hasil = hasil + " " + String.fromCharCode(penampung+64) ;
         }
     });
   }
